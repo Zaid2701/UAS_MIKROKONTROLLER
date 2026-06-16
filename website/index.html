@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Sorter - Dark Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header class="dashboard-header">
+            <h1>Dashboard Overview</h1>
+            <p>Sistem Pemilah Paket Pintar. Pantau indikator kinerja utama, log aliran barang secara real-time, dan hasilkan laporan evaluasi berbasis AI.</p>
+        </header>
+
+        <div class="grid-layout">
+            
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-title">TOTAL PAKET</span>
+                    <span class="card-icon">📦</span>
+                </div>
+                <h2 id="valTotal" class="card-value">0</h2>
+                <div class="card-trend text-green">
+                    <span>↑</span> Sistem aktif dan sinkron
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-title">JAKARTA (MERAH)</span>
+                    <span class="card-icon">🔴</span>
+                </div>
+                <h2 id="valMerah" class="card-value">0</h2>
+                <div class="card-trend text-red">
+                    <span>Target Konveyor A</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-title">BANDUNG (BIRU)</span>
+                    <span class="card-icon">🔵</span>
+                </div>
+                <h2 id="valBiru" class="card-value">0</h2>
+                <div class="card-trend text-blue">
+                    <span>Target Konveyor B</span>
+                </div>
+            </div>
+
+            <div class="card span-2 log-card">
+                <div class="card-top">
+                    <span class="card-title">LIVE MQTT STREAM</span>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="log-box" id="logArea">
+                    [System] Menginisialisasi koneksi ke server...<br>
+                </div>
+            </div>
+
+            <div class="card highlight-card">
+                <div class="card-top">
+                    <span class="card-icon">🤖</span>
+                </div>
+                <h3>Laporan AI Terperinci</h3>
+                <p>Gali lebih dalam analitik penyortiran hari ini dan dapatkan evaluasi otomatis.</p>
+                
+                <button class="btn-primary" id="btnLaporan">Buat Laporan AI →</button>
+                
+                <div id="kotakAI" class="ai-result hidden">
+                    <p id="teksLaporan">Menunggu data...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
