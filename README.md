@@ -11,6 +11,7 @@ Jika ingin menjalankan logika mikrokontroler pada simulator Wokwi, pastikan untu
 PubSubClient
 ESP32Servo
 ArduinoJson
+```
 
 ## 🚀 Video Simulasi
 Google Drive: https://drive.google.com/file/d/1n1Aszi8HVjRU81Ul7qsA-nDYel2LyhNS/view?usp=sharing
