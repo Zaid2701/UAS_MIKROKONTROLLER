@@ -1,6 +1,4 @@
-// ==========================================
-// 1. SETUP DOM ELEMENTS
-// ==========================================
+// 1. Setup DOM Elements
 const valTotal = document.getElementById('valTotal');
 const valMerah = document.getElementById('valMerah');
 const valBiru = document.getElementById('valBiru');
@@ -9,7 +7,7 @@ const btnLaporan = document.getElementById('btnLaporan');
 const kotakAI = document.getElementById('kotakAI');
 const teksLaporan = document.getElementById('teksLaporan');
 
-// TARUH API KEY GEMINI LU DI SINI
+// API Key Gemini
 const GEMINI_API_KEY = 'API GEMINI';
 
 // Format jam buat log
@@ -19,10 +17,7 @@ function tulisLog(pesan) {
     logArea.scrollTop = logArea.scrollHeight; 
 }
 
-
-// ==========================================
 // 2. KONEKSI MQTT (IOT)
-// ==========================================
 const clientId = 'web_client_' + Math.random().toString(16).substring(2, 8);
 const client = mqtt.connect('wss://broker.hivemq.com:8884/mqtt', { clientId: clientId });
 
@@ -45,10 +40,7 @@ client.on('message', (topik, message) => {
     valTotal.innerText = parseInt(valMerah.innerText) + parseInt(valBiru.innerText);
 });
 
-
-// ==========================================
 // 3. INTEGRASI GEMINI AI
-// ==========================================
 btnLaporan.addEventListener('click', async () => {
     // Tampilkan kotak dan set mode loading
     kotakAI.classList.remove('hidden');

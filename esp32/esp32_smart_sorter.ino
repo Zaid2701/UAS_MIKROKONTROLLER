@@ -1,14 +1,13 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-// --- KONFIGURASI WIFI & MQTT ---
-// Di Wokwi, nama WiFi defaultnya ini dan tanpa password
+// Konfigurasi WiFi Wokwi (SSID dan Password)
 const char* ssid = "Wokwi-GUEST";
 const char* password = "";
 
 // Server MQTT gratisan (HiveMQ)
 const char* mqtt_server = "broker.hivemq.com";
-const char* mqtt_topic = "proyekuts/kampuslu/paket"; // Harus SAMA PERSIS kayak di Web lu
+const char* mqtt_topic = "proyekuts/kampuslu/paket";
 
 // --- PIN TOMBOL ---
 const int btnMerah = 12; // Tombol untuk simulasi paket Merah
@@ -41,7 +40,6 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Menghubungkan ke MQTT Server...");
     
-    // Bikin ID Client acak biar ga tabrakan sama orang lain
     String clientId = "ESP32-SistemSortir-";
     clientId += String(random(0xffff), HEX);
     
@@ -59,14 +57,12 @@ void reconnect() {
 void setup() {
   Serial.begin(115200);
   
-  // Set tombol sebagai input dengan Pull-Up internal
-  // Jadi kalau gak ditekan nilainya HIGH, ditekan nilainya LOW
   pinMode(btnMerah, INPUT_PULLUP);
   pinMode(btnBiru, INPUT_PULLUP);
 
   setup_wifi();
   
-  // Port standar MQTT (berbeda dengan WSS di web)
+  // Port standar MQTT
   client.setServer(mqtt_server, 1883); 
 }
 
@@ -80,12 +76,12 @@ void loop() {
   if (digitalRead(btnMerah) == LOW) {
     Serial.println("Paket MERAH terdeteksi! Mengirim data...");
     client.publish(mqtt_topic, "MERAH");
-    delay(1000); // Jeda biar ngga ngirim berkali-kali pas dipencet
+    delay(1000);
   }
 
   if (digitalRead(btnBiru) == LOW) {
     Serial.println("Paket BIRU terdeteksi! Mengirim data...");
     client.publish(mqtt_topic, "BIRU");
-    delay(1000); // Jeda
+    delay(1000);
   }
 }
