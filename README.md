@@ -13,8 +13,15 @@ ESP32Servo
 ArduinoJson
 ```
 
-## 🚀 Video Simulasi
-Google Drive: https://drive.google.com/file/d/1n1Aszi8HVjRU81Ul7qsA-nDYel2LyhNS/view?usp=sharing
+## 🚀 Screenshot & Video Simulasi
+
+| 🖥️ UI Web Dashboard | ⚙️ Rangkaian Simulasi Wokwi |
+| :---: | :---: |
+| <img src="res/dashboard.png" width="450"> | <img src="res/wokwi.png" width="450"> |
+
+*Tampilan antarmuka dashboard untuk memantau log AI dan memicu simulasi.* 
+
+🎥 **Video Simulasi Lengkap:** [Klik di sini untuk menonton via Google Drive](https://drive.google.com/file/d/1n1Aszi8HVjRU81Ul7qsA-nDYel2LyhNS/view?usp=sharing)
 
 ---
 
