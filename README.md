@@ -19,7 +19,7 @@ ArduinoJson
 | :---: | :---: |
 | <img src="res/dashboard.png" width="450"> | <img src="res/wokwi.png" width="450"> |
 
-🎥 **Video Simulasi Lengkap:** [Klik untuk menonton via Google Drive](https://drive.google.com/file/d/1n1Aszi8HVjRU81Ul7qsA-nDYel2LyhNS/view?usp=sharing)
+🎥 **Video Simulasi Lengkap:** [Klik untuk menonton via Google Drive](https://drive.google.com/file/d/1UW61Qi0CZnnPNbHURAbbSKMIC3h_nJAE/view?usp=drive_link)
 
 ---
 
